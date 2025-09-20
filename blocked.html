@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Access Blocked</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .blocked-card {
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border-radius: 20px;
+            background: rgba(255,255,255,0.95);
+        }
+        .blocked-icon {
+            font-size: 4rem;
+            color: #ee0979;
+        }
+    </style>
+</head>
+<body>
+    <div class="blocked-card p-4 text-center">
+        <div class="blocked-icon mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16">
+                <path d="M5.5 9a1.5 1.5 0 1 1 3 0v1a1.5 1.5 0 1 1-3 0V9zm1 1a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1z"/>
+                <path d="M8 0c-.69 0-1.342.13-1.97.38C3.07 1.07 1.5 2.93 1.5 5.5c0 4.28 3.134 7.197 6.5 7.5 3.366-.303 6.5-3.22 6.5-7.5 0-2.57-1.57-4.43-4.53-5.12A5.978 5.978 0 0 0 8 0zm0 1c.638 0 1.26.12 1.85.35C12.07 2.07 13.5 3.93 13.5 5.5c0 3.86-2.82 6.49-5.5 6.78C5.32 11.99 2.5 9.36 2.5 5.5c0-1.57 1.43-3.43 3.65-4.15A6.978 6.978 0 0 1 8 1z"/>
+            </svg>
+        </div>
+        <h2 class="mb-3 text-danger">Access Blocked</h2>
+        <p class="lead">Your access to this page has been restricted for security reasons.</p>
+        <div class="alert alert-warning mt-3">
+            <strong>Your IP:</strong> <span id="user-ip">Detecting...</span>
+        </div>
+        <p>If you believe this is a mistake, please contact the administrator.</p>
+        <a href="/" class="btn btn-danger mt-2">Go Home</a>
+    </div>
+    <script>
+        // Fetch and display user's IP using a public API
+        fetch('https://api.ipify.org?format=json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('user-ip').textContent = data.ip;
+            })
+            .catch(() => {
+                document.getElementById('user-ip').textContent = 'Unavailable';
+            });
+    </script>
+</body>
+</html>
