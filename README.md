@@ -125,4 +125,5 @@ It logs user access, detects suspicious activity, allows blocking/revoking users
 
 ## License
 
-MIT License (or your preferred license).
+Author : Developers Arena
+
