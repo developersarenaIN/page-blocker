@@ -5,6 +5,10 @@
 This project is a lightweight PHP + MySQL security system with both admin and client sides.  
 It logs user access, detects suspicious activity, allows blocking/revoking users/sessions/IPs, and sends Telegram notifications for security events.
 
+## Purpose
+
+It was made for freelance developers who sell pages and their websites as a freelance developer i understand when client doesn't pay so use it wisely and block client side. Feel free to commit. 
+
 ## Features
 
 - **Admin Panel** (`index.php`):  
@@ -126,4 +130,5 @@ It logs user access, detects suspicious activity, allows blocking/revoking users
 ## License
 
 Author : Developers Arena
+
 
